@@ -31,6 +31,9 @@ export default function Project(props) {
         </h3>
         <div className="proj-btns">
           <motion.button
+          onClick={()=>{
+            window.open(props.live, '_blank', 'noopener,noreferrer');
+          }}
             variants={btnVariants}
             initial={{
               scale: 1,
@@ -46,6 +49,9 @@ export default function Project(props) {
             Live App
           </motion.button>
           <motion.button
+          onClick={()=>{
+            window.open(props.repo, '_blank', 'noopener,noreferrer');
+          }}
             variants={btnVariants}
             initial={{
               scale: 1,
@@ -61,6 +67,9 @@ export default function Project(props) {
             Git Repository
           </motion.button>
           <motion.button
+          onClick={()=>{
+            window.open(props.vid, '_blank', 'noopener,noreferrer');
+          }}
             variants={btnVariants}
             initial={{
               scale: 1,

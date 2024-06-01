@@ -102,7 +102,7 @@ background-color: brown;
     right: 0px;
 }
 .carousel-inside{
-    background-color: aliceblue;
+    
     height: 100%;
     width: 100%;
     display: flex;
@@ -112,7 +112,7 @@ background-color: brown;
 .proj-img{
     flex-grow: 2;
     flex-basis: 0;
-    background-color: aqua;
+    
     
     background-repeat: no-repeat;
     background-size: cover;
@@ -123,6 +123,7 @@ background-color: brown;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-color: aliceblue;
 }
 .proj-details-text{
     text-align: justify;
@@ -149,6 +150,4 @@ background-color: brown;
     border: #DC5F00 2px dashed;
     border-radius: 10px;
 }
-.proj-btn:hover{
 
-}

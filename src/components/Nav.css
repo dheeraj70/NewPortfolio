@@ -22,16 +22,17 @@
 .navb-controls{
     display: flex;
     justify-content: space-around;
-    gap: 60px;
-    width: 50%;
-    margin-right: 65px;
-    color: #eeeeee;
+    align-items: center;
     
+    width: 100%;
+    
+    box-sizing: border-box;
+    color: #eeeeee; 
 }
 .nav-btn{
     cursor: pointer;
     font-weight: 600;
-    font-size: 28px;
+    font-size: 20px;
     display: flex;
     align-items: center;
 }

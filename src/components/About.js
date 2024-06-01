@@ -2,7 +2,7 @@ import React,{useRef, useEffect} from "react";
 import "./About.css";
 import { motion ,useInView ,useAnimation} from "framer-motion";
 
-export default function About() {
+export default function About({about_Ref}) {
 
   const aboutRef = useRef(null);
   const aboutInView = useInView(aboutRef);
@@ -11,7 +11,7 @@ export default function About() {
 
 
   useEffect(() => {
-    console.log("Element is in view: ", aboutInView);
+    //console.log("Element is in view: ", aboutInView);
     if(aboutInView){
       controls.start("show");
       controls.start("reveal");
@@ -38,7 +38,7 @@ export default function About() {
           strokeLinejoin="miter"
         ></path>
       </svg>
-      <div className="about-cont">
+      <div ref={about_Ref} id="about" className="about-cont">
         <motion.div 
         variants={{
           show:{

@@ -1,44 +1,58 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./Projects.css";
-import { motion, AnimatePresence } from "framer-motion";
+import {
+  motion,
+  AnimatePresence,
+  useInView,
+  useAnimation,
+} from "framer-motion";
 import Project from "./Project";
 
-export default function Projects() {
+export default function Projects({projects_Ref}) {
   const [nextDir, toggleDir] = useState(true);
+  const controls = useAnimation();
 
-  const projects = [{
-    title: "Recipe Gram",
-    cont : "Full stack Recipe sharing app. Built using Node.js, React.js, MySQL,and Passport.js for secure authentication. The app is hosted on AWSEC2 with NGINX for reverse proxy.",
-    img : "recipegram.png"
-  },{
-    title: "Image Scout",
-    cont : "Full stack Recipe sharing app. Built using Node.js, React.js, MySQL,and Passport.js for secure authentication. The app is hosted on AWSEC2 with NGINX for reverse proxy.",
-    img : "imagescout.png"
-  },{
-    title: "The Draw App",
-    cont : "Full stack Recipe sharing app. Built using Node.js, React.js, MySQL,and Passport.js for secure authentication. The app is hosted on AWSEC2 with NGINX for reverse proxy.",
-    img : "drawapp.png"
-  },{
-    title: "Doctor Appointment App",
-    cont : "Full stack Recipe sharing app. Built using Node.js, React.js, MySQL,and Passport.js for secure authentication. The app is hosted on AWSEC2 with NGINX for reverse proxy.",
-    img : "docappointment.png"
-  },
-]
+  const projects = [
+    {
+      title: "Recipe Gram",
+      cont: "Full stack Recipe sharing app. Built using Node.js, React.js, MySQL,and Passport.js for secure authentication. The app is hosted on AWSEC2 with NGINX for reverse proxy.",
+      img: "recipegram.png",
+      live:"https://recipegram.site",
+      repo: "https://github.com/dheeraj70/RecipeGram",
+      vid: "#"
+    },
+    {
+      title: "Image Scout",
+      cont: "Image searching app built using React.js and the Flickr API for efficient image searches, with a focus on user-friendly design. 'Under Development!'",
+      img: "imagescout.png",
+      live:"https://imagesscout.netlify.app/",
+      repo: "https://github.com/dheeraj70/image_scout",
+      vid: "#"
+    },
+    {
+      title: "The Draw App",
+      cont: "Full stack drawing application featuring HTML5 canvas-based drawing interface built using Node.js, EJS, MongoDB, and Express.js.",
+      img: "drawapp.png",
+      live:"https://recipegram.site",
+      repo: "https://github.com/dheeraj70/drawapp",
+      vid: "#"
+    },
+    {
+      title: "Doctor Appointment App",
+      cont: "Doctor Appointment App is a React.js application designed for scheduling doctor appointments. It is built for hospital receptionists to easily book and manage appointments.",
+      img: "docappointment.png",
+      live:"https://recipegram.site",
+      repo: "https://github.com/dheeraj70/RecipeGram",
+      vid: "#"
+    },
+  ];
 
-  const carouselItems = projects.map((i, index)=>{
-      return(
-      <Project
-      key = {index}
-      title={i.title}
-      cont={i.cont}
-      img={i.img}
-    />)
-    })
-  ;
+  const carouselItems = projects.map((i, index) => {
+    return <Project key={index} title={i.title} cont={i.cont} img={i.img} live={i.live} repo={i.repo} vid={i.vid}/>;
+  });
+  const projTitleRef = useRef(null);
 
-  console.log(carouselItems)
-
-
+  const projTitleInView = useInView(projTitleRef);
 
   const len = carouselItems.length;
 
@@ -105,6 +119,28 @@ export default function Projects() {
     },
   };
 
+  const titleVariants = {
+    show: {
+      x: 0,
+      y: 0,
+      opacity: 1,
+    },
+  };
+
+  const carousalShowVariants = {
+    pop: {
+      scale: 1,
+      opacity: 1,
+    },
+  };
+  useEffect(() => {
+    //console.log(projTitleInView);
+    if (projTitleInView) {
+      controls.start("show");
+      controls.start("pop");
+    }
+  }, [projTitleInView]);
+
   return (
     <>
       <svg
@@ -124,8 +160,21 @@ export default function Projects() {
         ></path>
       </svg>
 
-      <div className="projetcs-cont">
-        <h1 className="projs-head">
+      <div ref={projects_Ref} className="projetcs-cont">
+        <motion.h1
+          ref={projTitleRef}
+          variants={titleVariants}
+          initial={{
+            x: "-100px",
+            y: "-20px",
+            opacity: 0,
+          }}
+          animate={controls}
+          transition={{
+            delay: 0.4
+          }}
+          className="projs-head"
+        >
           Projects
           <svg
             className="projs-scribble"
@@ -155,9 +204,23 @@ export default function Projects() {
               />
             </g>
           </svg>
-        </h1>
+        </motion.h1>
 
-        <div className="proj-carousel">
+        <motion.div
+          variants={carousalShowVariants}
+          initial={{
+            scale: 0,
+            opacity: 0,
+          }}
+          transition={{
+            delay: 0.6,
+            duration: 0.5,
+            ease: "backInOut",
+            type: "spring"
+          }}
+          animate={controls}
+          className="proj-carousel"
+        >
           <AnimatePresence initial={false}>
             <motion.div
               key={Indices[0]}
@@ -191,28 +254,32 @@ export default function Projects() {
           </AnimatePresence>
 
           <div className="carouselBtns">
-            <motion.button 
-            initial={{scale: 1, opacity: 0.8}}
-            whileHover={{ scale: 1.2, opacity: 1}}
-            whileTap={{scale: 0.8}}
-            transition={{
-              duration: 0.1,
-              
-              ease: "easeInOut"
-            }}
-            className="carouselBtn" onClick={handlePrev}>
+            <motion.button
+              initial={{ scale: 1, opacity: 0.8 }}
+              whileHover={{ scale: 1.2, opacity: 1 }}
+              whileTap={{ scale: 0.8 }}
+              transition={{
+                duration: 0.1,
+
+                ease: "easeInOut",
+              }}
+              className="carouselBtn"
+              onClick={handlePrev}
+            >
               {"⮜"}
             </motion.button>
-            <motion.button 
-            initial={{scale: 1, opacity: 0.8}}
-            whileHover={{ scale: 1.2, opacity: 1}}
-            whileTap={{scale: 0.8}}
-            transition={{
-              duration: 0.1,
-              
-              ease: "easeInOut"
-            }}
-            className="carouselBtn" onClick={handleNext}>
+            <motion.button
+              initial={{ scale: 1, opacity: 0.8 }}
+              whileHover={{ scale: 1.2, opacity: 1 }}
+              whileTap={{ scale: 0.8 }}
+              transition={{
+                duration: 0.1,
+
+                ease: "easeInOut",
+              }}
+              className="carouselBtn"
+              onClick={handleNext}
+            >
               {"⮞"}
             </motion.button>
           </div>
@@ -220,7 +287,7 @@ export default function Projects() {
           <div className="rightBlur"></div>
           <div className="leftBlack"></div>
           <div className="rightBlack"></div>*/}
-        </div>
+        </motion.div>
       </div>
     </>
   );

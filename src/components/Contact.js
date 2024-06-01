@@ -1,73 +1,144 @@
 import React from "react";
+import "./Contact.css";
 import { motion } from "framer-motion";
-import "./Hero.css";
 
-export default function Hero() {
-  const blobVariants = {
-    one: {
-      d: "M53.8,-61.9C67.9,-52.3,76.2,-33.6,78.2,-14.8C80.3,3.9,76.1,22.7,67.4,40C58.7,57.3,45.5,73.1,28.6,79.7C11.7,86.3,-8.9,83.7,-26.9,76.2C-44.9,68.7,-60.3,56.2,-67.6,40.5C-75,24.8,-74.3,5.9,-68.6,-9.6C-62.9,-25,-52.1,-37.1,-39.8,-47C-27.5,-57,-13.7,-64.9,3.1,-68.5C19.9,-72.1,39.7,-71.6,53.8,-61.9Z",
-    },
-    two: {
-      d: "M51.5,-60.8C65.9,-49.3,76.2,-32.3,79.6,-13.8C83.1,4.6,79.9,24.4,70.5,40.9C61.2,57.4,45.9,70.6,29,74.4C12.2,78.2,-6.1,72.6,-25.2,66.7C-44.4,60.9,-64.3,54.8,-73.1,41.3C-81.9,27.9,-79.6,7.2,-75.5,-12.9C-71.5,-32.9,-65.7,-52.2,-52.9,-64C-40,-75.7,-20,-79.9,-0.7,-79C18.6,-78.2,37.1,-72.2,51.5,-60.8Z",
-    },
-    three: {
-      d: "M53.3,-66.1C64.2,-54.4,64.8,-33,67.4,-12.7C69.9,7.5,74.3,26.5,68.5,42.4C62.7,58.3,46.6,71.1,27.9,78.9C9.1,86.7,-12.2,89.5,-26.9,81C-41.5,72.6,-49.4,52.8,-54.1,35.6C-58.9,18.4,-60.5,3.7,-59.4,-11.9C-58.4,-27.6,-54.7,-44.2,-44.4,-56C-34,-67.8,-17,-74.8,2.1,-77.3C21.2,-79.8,42.4,-77.8,53.3,-66.1Z",
-    },
-  };
-
+export default function Contact({contact_Ref}) {
   return (
-
-
-    
-    <div className="back-hero">
-      
-      <div className="backVideoDiv">
-        <video className="backVideo" loop autoPlay muted>
-          <source type="video/mp4" src="/loop_slowed.mp4"></source>
-        </video>
-      </div>
-
-      <motion.div
-        initial={{
-          opacity: 1,
-        }}
-        animate={{
-          opacity: 0,
-        }}
-        transition={{
-          duration: 1,
-          ease: "linear",
-        }}
-        className="blackLayer"
-      ></motion.div>
-      <motion.div className="hero-cont"
-      
-      initial={{
-        position: "relative",
-        right: "100px",
-        bottom: "20px",
-        opacity: 0
-      }}
-      animate={{
-        right: "0px",
-        bottom: "0px",
-        opacity: 1
-      }}
-      transition={{
-        duration: 0.5,
-        ease:"backInOut"
-      }}
-      
+    <>
+      <svg
+        id="visual"
+        style={{ position: "relative" }}
+        viewBox="5 425 800 170"
+        className="waveOne"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlnsXlink="http://www.w3.org/1999/xlink"
+        version="1.1"
       >
-        <h1 className="hero-text heroHead">Hello</h1>
-        <h1 className="hero-text heroHead">
-          I'm <section className="name">Dheeraj</section>
+        <path
+          d="M0 517L21.5 523C43 529 86 541 128.8 541.5C171.7 542 214.3 531 257.2 525.8C300 520.7 343 521.3 385.8 525C428.7 528.7 471.3 535.3 514.2 532.3C557 529.3 600 516.7 642.8 519.8C685.7 523 728.3 542 771.2 544.8C814 547.7 857 534.3 878.5 527.7L900 521L900 601L878.5 601C857 601 814 601 771.2 601C728.3 601 685.7 601 642.8 601C600 601 557 601 514.2 601C471.3 601 428.7 601 385.8 601C343 601 300 601 257.2 601C214.3 601 171.7 601 128.8 601C86 601 43 601 21.5 601L0 601Z"
+          fill="#0b0b0b"
+          stroke="#eeeeee"
+          stroke-width="3"
+          strokeLinecap="round"
+          strokeLinejoin="miter"
+        ></path>
+      </svg>
+
+      <motion.h1
+        // ref={projTitleRef}
+        // variants={titleVariants}
+        //  initial={{
+        //    x: "-100px",
+        //    y: "-20px",
+        //    opacity: 0,
+        //  }}
+        //  animate={controls}
+        //  transition={{
+        //    delay: 0.6
+        //  }}
+        ref={contact_Ref}
+        className="projs-head"
+      >
+        Contact
+        <svg
+          className="projs-scribble"
+          version="1.0"
+          xmlns="http://www.w3.org/2000/svg"
+          width="170"
+          height="100"
+          viewBox="0 0 1413.000000 194.000000"
+          preserveAspectRatio="xMidYMid meet"
+        >
+          <g
+            transform="translate(0.000000,194.000000) scale(0.100000,-0.100000)"
+            fill="#DC5F00"
+            stroke="none"
+          >
+            <path
+              d="M275 1650 c-87 -20 -166 -83 -186 -150 -27 -89 43 -148 184 -156 40
+-2 756 -9 1592 -14 836 -6 2638 -20 4005 -30 1367 -11 2658 -20 2870 -21 219
+0 376 -4 365 -9 -11 -4 -245 -24 -520 -44 -275 -20 -1074 -79 -1775 -131 -701
+-52 -2182 -163 -3290 -245 -1421 -106 -2028 -155 -2060 -165 -101 -34 -169
+-117 -156 -189 7 -36 47 -79 88 -95 55 -21 1672 -81 2993 -111 1808 -41 4170
+-41 5945 0 998 23 1660 45 2710 91 500 21 535 26 608 79 77 56 99 146 48 199
+-55 57 -88 59 -601 36 -2712 -120 -5554 -153 -8293 -98 -177 3 -320 8 -318 10
+2 2 667 53 1477 114 6938 516 7095 528 7139 544 69 24 117 63 141 111 41 85 0
+152 -103 173 -51 11 -989 19 -9298 81 -1455 10 -2845 21 -3090 23 -245 2 -458
+1 -475 -3z"
+            />
+          </g>
+        </svg>
+      </motion.h1>
+      <div className="contact-cont">
+        <h2 className="contact-head contactFirst-head">
+          Have a question or want to work together? Leave your details and I'll
+          get back to you as soon as possible.
+        </h2>
+        <h1 className="contact-head" style={{ textAlign: "center" }}>
+          Don't be shy! Hit me up!
         </h1>
-        <h2 className="hero-text heroSubHead">Full Stack MERN Developer</h2>
-        <h3 className="hero-text heroPara">
-         With a solid foundation in both backend and frontend development, I bring a wealth of expertise to every project. Let's collaborate and bring innovative ideas to life!
-        </h3>
-        <div style={{gap: "45px", marginTop: "10px"}} className="socialIcons">
+
+        <form
+          action="https://formsubmit.co/tornadorush7@gmail.com"
+          method="POST"
+        >
+          <div className="contact-form">
+            <label htmlFor="name">
+              <h2 class=" contact-labelFirst">Name:</h2>
+            </label>
+
+            <input class="contact-text" type="text" name="name" id="name" />
+
+            <label htmlFor="name">
+              <h2 class="contact-label">Email:</h2>
+            </label>
+            <input class="contact-text" type="email" name="email" id="email" />
+            <label htmlFor="name">
+              <h2 class="contact-label">Message:</h2>
+            </label>
+            <textarea
+              class="contact-textArea"
+              name="message"
+              id="message"
+              height="200px"
+            ></textarea>
+            <div className="submitBtnHolder">
+              <motion.button
+                className="contactSubmit"
+                type="submit"
+                variants={{
+                  hover: {
+                    backgroundColor: "#DC5F00",
+                    color: "#eeeeee",
+                    scale: 1.2,
+
+                    transition: {
+                      duration: 0.2,
+                      type: "spring",
+                      ease: "ease",
+                    },
+                  },
+                }}
+                initial={{
+                  scale: 1,
+                  backgroundColor: "#DC5F00",
+                  color: "#eeeeee",
+                }}
+                animate={{
+                  backgroundColor: "#DC5F00",
+                }}
+                whileHover="hover"
+                whileTap={{ scale: 0.8 }}
+              >
+                Submit
+              </motion.button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div className="footer">
+        <p>Copyright © 2024. All rights are reserved</p>
+        <div className="socialIcons">
           <motion.svg
           onClick={()=>{
             window.open("https://github.com/dheeraj70", '_blank', 'noopener,noreferrer');
@@ -108,6 +179,7 @@ export default function Hero() {
               fill="#eeeeee"
             />
           </motion.svg>
+
           <motion.svg
             xmlns="http://www.w3.org/2000/svg"
             width="35"
@@ -130,59 +202,7 @@ export default function Hero() {
             />
           </motion.svg>
         </div>
-      </motion.div>
-      <motion.div className="heroimg"
-      
-      initial={{
-        position: "relative",
-        left: "100px",
-        bottom: "20px",
-        opacity: 0
-      }}
-      animate={{
-        left: "0px",
-        bottom: "0px",
-        opacity: 1
-      }}
-      transition={{
-        duration: 0.5,
-        ease:"backInOut"
-      }}
-      >
-        <svg
-          className="heroSVG"
-          viewBox="21 25 160 160"
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="xMidYMid meet"
-        >
-          <defs>
-  <pattern id="myself" patternUnits="objectBoundingBox" x="0" y="0" width="1" height="1">
-    <image href="/myself.jpg" x="-25" y="-15" width="230" height="230" />
-  </pattern>
-</defs>
-          <motion.path
-            variants={blobVariants}
-            
-            animate={{
-              d: ["M53.8,-61.9C67.9,-52.3,76.2,-33.6,78.2,-14.8C80.3,3.9,76.1,22.7,67.4,40C58.7,57.3,45.5,73.1,28.6,79.7C11.7,86.3,-8.9,83.7,-26.9,76.2C-44.9,68.7,-60.3,56.2,-67.6,40.5C-75,24.8,-74.3,5.9,-68.6,-9.6C-62.9,-25,-52.1,-37.1,-39.8,-47C-27.5,-57,-13.7,-64.9,3.1,-68.5C19.9,-72.1,39.7,-71.6,53.8,-61.9Z",
-              "M51.5,-60.8C65.9,-49.3,76.2,-32.3,79.6,-13.8C83.1,4.6,79.9,24.4,70.5,40.9C61.2,57.4,45.9,70.6,29,74.4C12.2,78.2,-6.1,72.6,-25.2,66.7C-44.4,60.9,-64.3,54.8,-73.1,41.3C-81.9,27.9,-79.6,7.2,-75.5,-12.9C-71.5,-32.9,-65.7,-52.2,-52.9,-64C-40,-75.7,-20,-79.9,-0.7,-79C18.6,-78.2,37.1,-72.2,51.5,-60.8Z",
-              "M51.1,-62.1C62.7,-51.1,66.2,-31.7,69.1,-12.6C72.1,6.6,74.4,25.5,67.4,40C60.3,54.6,43.8,64.9,25.5,72.6C7.2,80.3,-12.9,85.5,-30.5,80.5C-48.2,75.6,-63.4,60.5,-69.1,43.4C-74.8,26.3,-71,7.2,-67.9,-12.2C-64.8,-31.7,-62.3,-51.5,-51.1,-62.6C-39.9,-73.7,-20,-76.1,-0.1,-76C19.7,-75.8,39.4,-73.2,51.1,-62.1Z",
-              "M53.8,-61.9C67.9,-52.3,76.2,-33.6,78.2,-14.8C80.3,3.9,76.1,22.7,67.4,40C58.7,57.3,45.5,73.1,28.6,79.7C11.7,86.3,-8.9,83.7,-26.9,76.2C-44.9,68.7,-60.3,56.2,-67.6,40.5C-75,24.8,-74.3,5.9,-68.6,-9.6C-62.9,-25,-52.1,-37.1,-39.8,-47C-27.5,-57,-13.7,-64.9,3.1,-68.5C19.9,-72.1,39.7,-71.6,53.8,-61.9Z"
-            ]
-            }}
-            transition={{
-              yoyo: Infinity,
-              duration: 5,
-              repeat: Infinity,
-              times: [0, 0.33, 0.66, 1],
-              ease: "linear"
-            }}
-            fill="url(#myself)"
-            stroke="#eeeeee" stroke-width="1.5"
-            transform="translate(100 100)"
-          />
-        </svg>
-      </motion.div>
-    </div>
+      </div>
+    </>
   );
 }
