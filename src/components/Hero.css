@@ -69,3 +69,80 @@
     max-height: 100%;
     
 }
+@media (max-width: 480px) {
+    .back-hero{
+        width: 100%;
+        
+        
+        padding-top: 60px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 60px;
+    }
+    .backVideoDiv{
+        position: absolute;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+    .backVideo{
+        height: 100%;
+        width: 100%;
+        object-fit:fill;
+    }
+    .blackLayer{
+        position: absolute;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(0, 0, 0);
+        opacity: 1;
+    }
+    .hero-cont{
+        width: 100%;
+        height: 100%;
+        color: aliceblue;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding-left: 7vw;
+        box-sizing: border-box;
+    }
+    
+    .hero-text{
+        margin: 12px 0px;
+        z-index: 1;
+        
+    }
+    .heroHead{
+        font-size: 60px;
+        margin: 0px 0px;
+        line-height: 62px;
+    }
+    .name{
+        display: inline-block;
+        color: #DC5F00;
+        
+    }
+    .heroimg{
+        width: 100%;
+        height: 100%;
+       
+        padding-right: 0px;
+        padding-left: 20vw;
+        display: flex;
+        z-index: 1;
+        align-items: center;     
+        box-sizing: border-box;
+    }
+    .heroSVG{
+        width: 90%;
+        height: 90%;
+        max-width: 100%; 
+        max-height: 100%;
+        
+    }
+    
+}

@@ -266,7 +266,7 @@ export default function Projects({projects_Ref}) {
               className="carouselBtn"
               onClick={handlePrev}
             >
-              {"⮜"}
+              &#x2190;
             </motion.button>
             <motion.button
               initial={{ scale: 1, opacity: 0.8 }}
@@ -280,7 +280,7 @@ export default function Projects({projects_Ref}) {
               className="carouselBtn"
               onClick={handleNext}
             >
-              {"⮞"}
+              &#x2192;
             </motion.button>
           </div>
           {/*<div className="leftBlur"></div>

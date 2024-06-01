@@ -151,3 +151,170 @@ background-color: brown;
     border-radius: 10px;
 }
 
+@media (max-width: 480px) {
+    .projetcs-cont{
+        padding-top: 13vh;
+        height: auto;
+        background-color: #0b0b0b;
+        z-index: -1;
+    }
+    .projs-head{
+        font-size: 60px;
+        line-height: 62px;
+        margin: 0px;
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        color: #eeeeee;
+    }
+    .projs-scribble{
+        position: absolute;
+        left: 45vw;
+        top: 4px;
+        transform: rotate(-7deg) scaleX(-1) scaleX(1.3);
+    
+        z-index: -1;
+    }
+    .proj-carousel{
+        width: 100%;
+        height: 100vh;
+        margin-top: 5vh;
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 8px;
+        position: relative;
+        overflow-x: hidden;
+    }
+    .carousel-item{
+        height: 75vh;
+        position: absolute;
+        width: 90%;
+        min-width: 50%;
+    }
+    .CIa{
+    background-color: blue;
+    
+    
+    }
+    .CIb{
+    background-color: rgb(127, 153, 255);
+    }
+    .CIc{
+    background-color: brown;
+    
+    }
+    .carouselBtns{
+        position: absolute;
+        top: calc(50% - 25px);
+        display: flex;
+        width: 100%;
+        
+        justify-content:space-between;
+        z-index: 6;
+    }
+    .carouselBtn{
+        height: 70px;
+        width: 70px;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        font-size: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        opacity: 0.8;
+        color: black;
+        font-weight: 700;
+    }
+    .leftBlack{
+        position: absolute;
+        height: 100%;
+        width: 10%;
+        background-image: linear-gradient(to right, #0b0b0b 50%, rgba(0, 0, 0, 0));
+        left: 0px;
+        z-index: 6;
+    }
+    .rightBlack{
+        position: absolute;
+        height: 100%;
+        width: 10%;
+        background-image: linear-gradient(to left, #0b0b0b 50%, rgba(0, 0, 0, 0));
+        right: 0px;
+        z-index: 6;
+    }
+    .leftBlur{
+        position: absolute;
+        height: 100%;
+        width: 12%;
+        backdrop-filter: blur(10px);
+      
+        left: 0px;
+    }
+    .rightBlur{
+        position: absolute;
+        height: 100%;
+        width: 12%;
+        backdrop-filter: blur(10px);
+       
+        right: 0px;
+    }
+    .carousel-inside{
+        
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .proj-img{
+        flex-grow:10;
+    flex-basis: auto;        
+        width: 100%;
+        min-height: 150px;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .proj-details{
+        flex-grow: 0.5;
+    flex-basis: auto;  
+        
+        display: block;
+        flex-direction: row;
+        
+        background-color: aliceblue;
+    }
+    .proj-details-text{
+        text-align:start;
+        margin: 15px 50px 0px;
+    }
+    .proj-title{
+        margin: 0px 0px 5px;
+        text-align: center;
+    }
+    .proj-btns{
+        margin-top: 9px;
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+        align-items: center;
+        padding-bottom: 2%;
+        gap: 5px;
+
+    }
+    .proj-btn{
+        width: 50%;
+        height: 40px;
+        border: none;
+        cursor: pointer;
+        font-family: "Rajdhani", sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        background-color: rgba(0, 0, 0, 0);
+        border: #DC5F00 2px solid;
+        border-radius: 10px;
+    }
+}
+

@@ -22,7 +22,7 @@ export default function Hero() {
     <div className="back-hero">
       
       <div className="backVideoDiv">
-        <video className="backVideo" loop autoPlay muted>
+        <video className="backVideo" loop autoPlay muted playsinline="true" disablePictureInPicture="true">
           <source type="video/mp4" src="/loop_slowed.mp4"></source>
         </video>
       </div>
@@ -151,7 +151,7 @@ export default function Hero() {
       >
         <svg
           className="heroSVG"
-          viewBox="21 25 160 160"
+          viewBox="21 20 160 170"
           xmlns="http://www.w3.org/2000/svg"
           preserveAspectRatio="xMidYMid meet"
         >

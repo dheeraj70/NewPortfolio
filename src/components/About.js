@@ -24,7 +24,7 @@ export default function About({about_Ref}) {
       <svg
         id="visual"
         style={{position: "relative"}}
-        viewBox="5 515 890 40"
+        viewBox="5 515 850 40"
         className="waveOne"
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
