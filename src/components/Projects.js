@@ -145,7 +145,7 @@ export default function Projects({projects_Ref}) {
     <>
       <svg
         id="visual"
-        viewBox="5 25 870 50"
+        viewBox="5 25 750 50"
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
         version="1.1"
