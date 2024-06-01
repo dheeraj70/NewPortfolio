@@ -40,18 +40,52 @@ export default function Hero() {
         }}
         className="blackLayer"
       ></motion.div>
-      <div className="hero-cont">
+      <motion.div className="hero-cont"
+      
+      initial={{
+        position: "relative",
+        right: "100px",
+        bottom: "20px",
+        opacity: 0
+      }}
+      animate={{
+        right: "0px",
+        bottom: "0px",
+        opacity: 1
+      }}
+      transition={{
+        duration: 0.5,
+        ease:"backInOut"
+      }}
+      
+      >
         <h1 className="hero-text heroHead">Hello</h1>
         <h1 className="hero-text heroHead">
           I'm <section className="name">Dheeraj</section>
         </h1>
         <h2 className="hero-text heroSubHead">Full Stack MERN Developer</h2>
         <h3 className="hero-text heroPara">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea magni
-          animi in, a
+         With a solid foundation in both backend and frontend development, I bring a wealth of expertise to every project. Let's collaborate and bring innovative ideas to life!
         </h3>
-      </div>
-      <div className="heroimg">
+      </motion.div>
+      <motion.div className="heroimg"
+      
+      initial={{
+        position: "relative",
+        left: "100px",
+        bottom: "20px",
+        opacity: 0
+      }}
+      animate={{
+        left: "0px",
+        bottom: "0px",
+        opacity: 1
+      }}
+      transition={{
+        duration: 0.5,
+        ease:"backInOut"
+      }}
+      >
         <svg
           className="heroSVG"
           viewBox="21 25 160 160"
@@ -85,7 +119,7 @@ export default function Hero() {
             transform="translate(100 100)"
           />
         </svg>
-      </div>
+      </motion.div>
     </div>
   );
 }

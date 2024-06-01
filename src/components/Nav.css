@@ -1,13 +1,7 @@
-body{
-    margin: 0;
-    background-color: #262626;
-    font-family: "Rajdhani", sans-serif;
-  
-  font-style: normal;
-}
+
 .nav-bar{
     background-color: #373a40;
-    height: 8vh;
+    height: 10vh;
     display: flex;
     position: relative;
 }
@@ -48,6 +42,6 @@ body{
 }
 .nav-wave{
     position: absolute;
-    top: 8vh;
+    top: 10vh;
     z-index: 2;
 }
